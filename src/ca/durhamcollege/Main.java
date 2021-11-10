@@ -7,6 +7,7 @@ package ca.durhamcollege;
 
 import java.util.Scanner;
 
+
 public class Main
 {
 
@@ -48,26 +49,75 @@ public class Main
         }
     }
 
+    public static void printLog(int[] log)
+    {
+        for (var line:log)
+        {
+            System.out.println(line);
+        }
+    }
+
+    public static void printLog(float[] log)
+    {
+        for (var line:log)
+        {
+            System.out.println(line);
+        }
+    }
+
+
+    public static void buildLog(String[] log)
+    {
+        for (int i = 0; i < Config.NUM_OF_STRINGS; i++)
+        {
+            String prompt = "Enter your String: ";
+            log[i] = "";
+            log[i] = (String) getConsoleInput(prompt, log[i]);
+        }
+    }
+
+    public static void buildLog(int[] log)
+    {
+        for (int i = 0; i < Config.NUM_OF_INTEGERS; i++)
+        {
+            String prompt = "Enter your Integer: ";
+            log[i] = (int) getConsoleInput(prompt, log[i]);
+        }
+    }
+
+    public static void buildLog(float[] log)
+    {
+        for (int i = 0; i < Config.NUM_OF_FLOATS; i++)
+        {
+            String prompt = "Enter your Float: ";
+            log[i] = (float) getConsoleInput(prompt, log[i]);
+        }
+    }
+
     /**
      * Entry point for our application
      * @param args
      */
     public static void main(String[] args)
     {
-        int intNumber = 0;
-        float floatNumber = 0.0f; // "notice the f"
-        String stringInput = "";
+        String[] Log = new String[Config.NUM_OF_STRINGS];
+        int[] intLog = new int[Config.NUM_OF_INTEGERS];
+        float[] floatLog = new float[Config.NUM_OF_FLOATS];
 
-        stringInput = (String) getConsoleInput("Enter a String: ", stringInput);
 
-        System.out.println("Our string is: " + stringInput);
+        buildLog(Log);
+        printLog(Log);
+        System.out.println(); // empty spac
 
-        intNumber = (Integer) getConsoleInput("Enter an Integer: ", intNumber);
+        /*
+        buildLog(intLog);
+        printLog(intLog);
+        System.out.println(); // empty space
 
-        System.out.println("Our integer is: " + intNumber);
+        buildLog(floatLog);
+        printLog(floatLog);
+        System.out.println(); // empty space
+         */
 
-        floatNumber = (Float) getConsoleInput("Enter a Float: ", floatNumber);
-
-        System.out.println("Our float is: " + floatNumber);
     }
 }
