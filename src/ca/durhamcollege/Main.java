@@ -4,9 +4,7 @@
  * @date    November 8th, 2021
  */
 package ca.durhamcollege;
-
 import java.util.Scanner;
-
 
 public class Main
 {
@@ -104,12 +102,10 @@ public class Main
         int[] intLog = new int[Config.NUM_OF_INTEGERS];
         float[] floatLog = new float[Config.NUM_OF_FLOATS];
 
-
         buildLog(Log);
         printLog(Log);
         System.out.println(); // empty spac
 
-        /*
         buildLog(intLog);
         printLog(intLog);
         System.out.println(); // empty space
@@ -117,7 +113,5 @@ public class Main
         buildLog(floatLog);
         printLog(floatLog);
         System.out.println(); // empty space
-         */
-
     }
 }
