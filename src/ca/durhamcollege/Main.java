@@ -15,23 +15,21 @@ public class Main
      * @param object the object type to store the console input
      * @return the value from the console
      */
-    public static Object getConsoleInput(String prompt, Object object)
+    public static <T> T getConsoleInput(String prompt, T object)
     {
         Scanner console = new Scanner(System.in);
         System.out.print(prompt);
-        // console.nextLine(); // this is the input inquiry // DRY - Do Not Repeat Yourself
 
-
-        switch (object.getClass().getSimpleName()) // a switch case. Can't switch on anything but an int in c++ and other lower-lvl languages
+        switch (object.getClass().getSimpleName())
         {
             case "String":
-                return console.nextLine();
+                return (T) console.nextLine();
             case "Integer":
-                return console.nextInt();
+                return (T) console.nextInt();
             case "Float":
-                return console.nextFloat();
+                return (T) console.nextFloat();
             default:
-                return console.nextLine();
+                return (T) console.nextLine();
         }
     }
 
@@ -39,8 +37,21 @@ public class Main
      * For each line in the log, outputs a line of string
      * @param log string array of input lines
      */
-    public static void printLog(String[] log)
+    public static <T> void printLog(T[] log) throws Exception // If not getting a String, Int or Float
     {
+        int capacity = 0;
+        String prompt = "";
+
+        if(log instanceof String[])
+        {
+            capacity = Config.NUM_OF_STRINGS;
+            prompt = "Enter your String: ";
+        }
+        else if (log instanceof Integer[])
+        {
+            log[i] = (T) new Integer(0);
+        }
+
         for (var line:log)
         {
             System.out.println(line);
