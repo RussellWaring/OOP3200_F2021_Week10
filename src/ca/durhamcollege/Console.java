@@ -85,6 +85,15 @@ public class Console
     }
 
     /**
+     * Adds a string to the string Log
+     * @param prompt
+     */
+    public void input(String prompt)
+    {
+        input(prompt, InputTypes.STRING);
+    }
+
+    /**
      * For each line in the log, outputs a line of string
      * @param type indicates the type to be printed
      */
@@ -120,6 +129,14 @@ public class Console
                 }
                 break;
         }
+    }
+
+    /**
+     * Prints the string log (this is a default)
+     */
+    public void printLog()
+    {
+        printLog(InputTypes.STRING);
     }
 
     /**

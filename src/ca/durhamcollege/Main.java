@@ -17,9 +17,9 @@ public class Main
 
         for (int i = 0; i < Config.NUM_OF_STRINGS; i++)
         {
-            console.input("Enter your String: ", InputTypes.STRING);
+            console.input("Enter your String: "); // overloaded function
         }
-        console.printLog(InputTypes.STRING);
+        console.printLog();
         System.out.println(); // empty space
 
         for (int i = 0; i < Config.NUM_OF_INTEGERS; i++)
