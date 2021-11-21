@@ -41,3 +41,13 @@ public class Main
         System.out.println(); // empty space
     }
 }
+
+
+/*
+Seeing duplications?
+- Can I make this a function?
+
+In the in-class exercise this week:
+- Vector2D class convert into Java
+
+ */
